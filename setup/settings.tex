@@ -1,0 +1,78 @@
+% !Mode:: "TeX:UTF-8"
+% !TeX encoding = UTF-8 Unicode
+% !TeX program = xelatex
+% !TeX root = ../root.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%             用户设置               %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% 题目, 作者, 日期 (用于标题页)
+\title{论文题目}
+\author{作者}
+\date{\today}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% 设置插图文件路径
+\graphicspath{{figures/}} % 插图文件路径 (以 / 结尾)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% 修改中英文字体
+% CTEX默认正文宋体，注释下面这句
+% \setCJKmainfont[AutoFakeBold={2.17}]{SimSun}
+\setmainfont{Times New Roman}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% 其他宏包
+\usepackage{tikz}             % Tikz 绘图
+\usepackage{pgfplots}         % PGFPlots 图表
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{external} % 生成图表文件
+\tikzexternalize              % 生成图文件
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% 其他设置
+
+% 会报警告
+\setlength{\headheight}{27pt}
+
+% mathrsfs这个宏包报警告 Font shape `U/rsfs/m/n' in size <15.05624> not available
+\DeclareFontFamily{U}{rsfs}{\skewchar\font127 }
+\DeclareFontShape{U}{rsfs}{m}{n}{%
+   <-6.5> rsfs5
+   <6.5-8> rsfs7
+   <8-> rsfs10
+}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 链接样式
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 公式编号 (c.s.n)
+%\renewcommand{\theequation}{\arabic{chapter}.\arabic{section}.\arabic{equation}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{syntonly} % 快速检查错误, 分页但不生成 DVI 输出结果
+%\syntaxonly           % 仅检查语法, 不分页(更快速)
+
+%\includeonly{body/ch01}
+%\includeonly{body/ch02}
+%\includeonly{body/ch03}
+%\includeonly{body/ch04}
+%\includeonly{body/ch05}
+%\includeonly{body/ch06}
+%\includeonly{body/ch07}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

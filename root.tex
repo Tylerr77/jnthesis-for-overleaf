@@ -1,0 +1,31 @@
+% !Mode:: "TeX:UTF-8"
+% !TeX encoding = UTF-8 Unicode
+% !TeX program = xelatex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% overleaf 中会报警告Package fontspec Warning: 
+% Font "FandolSong-Regular""FandolHei-Regular""FandolFang-Regular" 
+% does not contain requested Script "CJK".
+% xeLatex本身的问题，下面这句强制静音这个警告，本地环境下可以注释
+\PassOptionsToPackage{quiet}{fontspec}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[master]{jnthesis}       % doctor*, master, nodegree 【本地环境用这个】
+	\input{setup/settings}             % 用户设置
+	\input{setup/userdefs}             % 用户自定义符号
+\begin{document}
+	\maketitle                         % 标题页
+    \cleardoublepage
+    \includepdf{cover.pdf}             % 封面
+    \cleardoublepage
+    \includepdf{statement.pdf}         % 独创性声明
+	\jnfrontmatter                     % 论文开始
+	\include{preface/c_abstract}       % 中文摘要
+	\include{preface/e_abstract}       % 英文摘要
+	\jncontents                        % 目录
+    \jnmainmatter                      % 正文开始
+	\input{main}                       % 正文
+	\include{appendix/acknowledgements}% 致谢
+	\jnreferences                      % 参考文献
+	\include{appendix/publications}    % 发表论文列表
+\end{document}

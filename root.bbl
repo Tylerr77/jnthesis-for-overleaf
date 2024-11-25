@@ -1,0 +1,59 @@
+\begin{thebibliography}{9}
+\linespread{1.25}
+\setlength{\itemsep}{1ex}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{#1}
+\expandafter\ifx\csname urlstyle\endcsname\relax\relax\else
+  \urlstyle{same}\fi
+
+\bibitem[Dupont(1974)]{Dupont1974}
+Dupont~B.
+\newblock Bone marrow transplantation in severe combined immunodeficiency\allowbreak[C]//\allowbreak
+White~H~J, Smith~R.
+\newblock Proc. of the 3rd Annual Meeting of Im Soc for Experimental Hematology(ISEH).
+\newblock Houstom: ISEH, 1974: 44-464.
+
+\bibitem[Aho et~al.(1986)Aho, Sethi, and Ulhman]{Aho1986}
+Aho~A~V, Sethi~R, Ulhman~J~D.
+\newblock Compilers principles\allowbreak[M].
+\newblock New York: Addisom Wedley, 1986: 277-3083.
+
+\bibitem[Chen et~al.(1990)Chen, Billing, Cowan, and Li]{Chen1990}
+Chen~S, Billing~S~A, Cowan~C~F, et~al.
+\newblock Practical identification of marmax models\allowbreak[J].
+\newblock Int J Control, 1990, 52:\penalty0 1327-1350.
+
+\bibitem[张全福\ 等(1991)张全福 and 王里青]{张全福1991}
+张全福, 王里青.
+\newblock “百家争鸣”与理工科学报编辑工作\allowbreak[C]//\allowbreak
+郑福寿.
+\newblock 学报编论丛: 第二集.
+\newblock 南京: 河海大学出版社, 1991: 1-4.
+
+\bibitem[高景德\ 等(1987)高景德 and 王祥珩]{高景德1987}
+高景德, 王祥珩.
+\newblock 交流电机的多回路理论\allowbreak[J].
+\newblock 清华大学学报, 1987, 27:\penalty0 1-8.
+
+\bibitem[余勇(1998)]{余勇1998}
+余勇.
+\newblock 劲性混凝土柱抗震性能的试验研究\allowbreak[硕士学位论文].
+\newblock 南京: 东南大学土木工程学院, 1998.
+
+\bibitem[霍夫斯基(1981)]{霍夫斯基1981}
+霍夫斯基.
+\newblock 禽病学\allowbreak[M].
+\newblock 胡祥壁等, 译. 7 版.
+\newblock 北京: 农业出版社, 1981: 7-9.
+
+\bibitem[张竹生(1983)]{张竹生1983}
+张竹生.
+\newblock 微分半动力系统的不变集\allowbreak[博士学位论文].
+\newblock 北京: 北京大学数学系, 1983.
+
+\bibitem[竺可桢(1973)]{竺可桢1973}
+竺可桢.
+\newblock 物理学\allowbreak[M].
+\newblock 北京: 科学出版社, 1973: 1-3.
+
+\end{thebibliography}
