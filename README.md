@@ -12,7 +12,7 @@
 > 
 > 3. `Compiler`设置为`XeLaTex`
 > 
-> 4. `Main document`设置为`jnthesis-master/root.tex`
+> 4. `Main document`设置为`jnthesis-revision-overleaf-main/root.tex`
 > 
 > 5. `Spell check`设置`off`(此步骤为中文不语法报错，后续overleaf若增加中文简体则选择之即可)
 > 
