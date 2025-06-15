@@ -7,8 +7,15 @@
 %%
 %% Bo Zhuang
 %% bozhuang@jiangnan.edu.cn
-%%
+%% 
 %% Version 0.1, 2019/04/21
+%% 
+%% Yu Wang
+%% wangyu@stu.jiangnan.edu.cn
+%% 
+%% Version 0.2, 2025/06/15
+
+
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{jnthesis}[2019/04/20 v0.1 Thesis class of Jiangnan University]
@@ -213,6 +220,7 @@
   \addcontentsline{toc}{chapter}{\bibname}
   \small
 }
+\renewcommand\@biblabel[1]{[#1]\hfill\hspace{-0.25em}}  % 参考文献标号左对齐
 
 % 发表论文
 \newcommand{\jnpublications}{
@@ -231,6 +239,17 @@
 \captionsetup[figure][bi-second]{name=Figure}
 \captionsetup[table][bi-first]{name=表}
 \captionsetup[table][bi-second]{name=Table}
+
+% 调整图表间距格式
+\raggedbottom % 解决重新编译后页面分布不均
+\AtBeginEnvironment{tabularx}{\fontsize{10.5}{12}\selectfont}
+\captionsetup[figure]{aboveskip=9pt, skip=9pt} % 只调整图片标题的间距
+\AtEndEnvironment{tabularx}{\vspace{-12pt}}
+\AtEndEnvironment{figure}{\vspace{-12pt}}
+
+% 三线表线的粗细
+\setlength{\heavyrulewidth}{1.5pt} % 上横线和下横线的粗细
+\setlength{\lightrulewidth}{0.75pt} % 中间横线的粗细
 
 % 定理环境
 \theoremheaderfont{\heiti}
@@ -262,3 +281,8 @@
 
 % 公式格式
 \allowdisplaybreaks[4] % 允许 align 公式跨页
+
+% 伪代码使用中文
+\renewcommand{\algorithmcfname}{算法}
+\SetKwInOut{KwIn}{输入}
+\SetKwInOut{KwOut}{输出}
