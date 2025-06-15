@@ -26,11 +26,14 @@
 \RequirePackage{amsmath}  % 数学公式 ([fleqn] 左对齐)
 \RequirePackage{amssymb, amsfonts, mathrsfs, mathtools} % 数学字体符号
 \RequirePackage[hyperref, thmmarks, amsmath]{ntheorem}  % 定理
-\RequirePackage{algorithmicx,algpseudocode} % 算法伪代码
+% \RequirePackage{algorithm2e,algpseudocode} % 算法伪代码
+\RequirePackage[ruled,linesnumbered,inoutnumbered,commentsnumbered,nofillcomment]{algorithm2e} % 算法伪代码
 \RequirePackage{listings}  % 程序代码
 \RequirePackage[square, super, comma, sort&compress]{natbib}   % 参考文献
 \RequirePackage{lipsum}   % 乱数假文, 用于测试排版效果
 \RequirePackage[final]{pdfpages} % 插入封面 PDF 文件
+\RequirePackage{multirow}
+\RequirePackage{float}
 
 \RequirePackage{fontspec}  % 字体
 \RequirePackage{xunicode}
@@ -40,6 +43,9 @@
 \RequirePackage{titlesec}  % 标题格式
 \RequirePackage{titletoc}  % 目录格式
 \RequirePackage{ifthen}    % If-Then
+
+% \usepackage{caption}
+% \usepackage{subfigure}
 
 % nice tables
 \RequirePackage{booktabs}
@@ -51,7 +57,8 @@
 
 %% 标准文档类结构名重定义
 \renewcommand{\partname}{第\chinese{part}部分}
-\renewcommand{\chaptername}{第\arabic{chapter}章}
+% \renewcommand{\chaptername}{第\arabic{chapter}章}
+\renewcommand{\chaptername}{第\chinese{chapter}章}
 \renewcommand{\contentsname}{目~~录}
 \renewcommand{\figurename}{图}
 \renewcommand{\tablename}{表}
@@ -201,6 +208,7 @@
   \clearpage
   \samplepagestyle{\songti\zihao{5}\bibname}
   \bibliographystyle{\bstfile} % 设定文献格式
+  \fontsize{10.5pt}{13.125pt}\selectfont % 重置字体大小和行间距
   \bibliography{\bibfiles} % 多个文献数据库之间逗号隔开,不要空格
   \addcontentsline{toc}{chapter}{\bibname}
   \small
@@ -210,11 +218,13 @@
 \newcommand{\jnpublications}{
   \clearpage
   \samplepagestyle{\songti\zihao{5}附录}
-  \chapter*{{\ziju{1}附录}: 作者在攻读{\thedegree}学位期间发表的论文}
-  \addcontentsline{toc}{chapter}{附录: 作者在攻读{\thedegree}学位期间发表的论文}
+  \chapter*{{\ziju{1}附录}: 作者在攻读{\thedegree}学位期间发表的成果}
+  \addcontentsline{toc}{chapter}{附录: 作者在攻读{\thedegree}学位期间发表的成果}
 }
 
-%% 图标和表格英语标题
+%% 图和表格标题
+\renewcommand {\thetable} {\thechapter{}-\arabic{table}}
+\renewcommand {\thefigure} {\thechapter{}-\arabic{figure}}
 \RequirePackage[labelsep=quad, font={small}]{caption}
 \RequirePackage{bicaption} % 双标题
 \captionsetup[figure][bi-first]{name=图}
