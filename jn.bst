@@ -1,4 +1,8 @@
 %% -------------------------------------------------------------------
+%% For Overleaf revise by Yu Wang <wangyu AT stu.jiangnan.edu.cn>
+%% Copyright (C) 2025 
+%% The original source file is `jn.bst'.
+%% -------------------------------------------------------------------
 %% For Jiangnan University by Bo Zhuang <bozhuang AT jiangnan.edu.cn>
 %% The original source file is `thuthesis-numeric.bst'.
 %% -------------------------------------------------------------------
@@ -147,7 +151,7 @@ FUNCTION {bbl.colon} { ": " }
 
 FUNCTION {bbl.wide.space} { "\ " }
 
-FUNCTION {bbl.slash} { "//\allowbreak " }
+FUNCTION {bbl.slash} { ".\ \allowbreak " } 
 
 FUNCTION {bbl.sine.loco}
 { entry.lang lang.zh =
@@ -265,7 +269,7 @@ FUNCTION {output.check}
 FUNCTION {fin.entry}
 { add.period$
   write$
-  newline$
+  "\vspace{-0.5em}" write$
 }
 
 FUNCTION {new.block}
@@ -890,7 +894,7 @@ FUNCTION {format.mark}
           if$
         }
       if$
-      "\allowbreak[" entry.mark * "]" *
+      "[" entry.mark * "]" *
     }
     { "" }
   if$
@@ -1124,7 +1128,7 @@ FUNCTION {format.journal.number}
 FUNCTION {format.journal.pages}
 { pages empty$
     { "" }
-    { ":\penalty0 " pages hyphenate * }
+    { ":~" pages hyphenate * }
   if$
 }
 
@@ -1526,8 +1530,68 @@ FUNCTION {mastersthesis}
     { "D" }
   if$
   set.entry.mark
-  monograph
+% 自定义标题格式
+output.bibitem
+author empty$ not
+{ format.authors }
+{ editor empty$ not
+{ format.editors }
+{ "empty author and editor in " cite$ * warning$
+""
 }
+if$
+}
+if$
+output
+new.block
+% 原标题处理
+% format.series.vol.num.title "title" output.check
+% 新标题处理：标题 + "[D]:"
+title empty$
+{ "" }
+{ title
+sentence.case.title
+'change.sentence.case
+'skip$
+if$
+entry.numbered number empty$ not and
+{ bbl.colon * number * }
+'skip$
+if$
+link.title
+'add.link
+'skip$
+if$
+"[D]:" * % 添加后缀
+}
+if$
+"title" output.check
+"M" set.entry.mark % 可能需要调整 entry.mark
+format.mark "" output.after
+new.block
+format.translators output
+new.sentence
+format.edition output
+new.block
+format.address.publisher output
+format.year "year" output.check
+format.pages bbl.colon output.after
+format.urldate "" output.after
+format.url output
+format.doi output
+new.block
+format.note output
+fin.entry
+}
+
+% FUNCTION {mastersthesis}
+% { lang.zh entry.lang =
+%     { "博士学位论文" }
+%     { "D" }
+%   if$
+%   set.entry.mark
+%   monograph
+% }
 
 FUNCTION {newspaper}
 { "N" set.entry.mark
@@ -1545,7 +1609,58 @@ FUNCTION {phdthesis}
     { "D" }
   if$
   set.entry.mark
-  monograph
+% 自定义标题格式
+output.bibitem
+author empty$ not
+{ format.authors }
+{ editor empty$ not
+{ format.editors }
+{ "empty author and editor in " cite$ * warning$
+""
+}
+if$
+}
+if$
+output
+new.block
+% 原标题处理
+% format.series.vol.num.title "title" output.check
+% 新标题处理：标题 + "[D]:"
+title empty$
+{ "" }
+{ title
+sentence.case.title
+'change.sentence.case
+'skip$
+if$
+entry.numbered number empty$ not and
+{ bbl.colon * number * }
+'skip$
+if$
+link.title
+'add.link
+'skip$
+if$
+"[D]:" * % 添加后缀
+}
+if$
+"title" output.check
+"M" set.entry.mark % 可能需要调整 entry.mark
+format.mark "" output.after
+new.block
+format.translators output
+new.sentence
+format.edition output
+new.block
+format.address.publisher output
+format.year "year" output.check
+format.pages bbl.colon output.after
+format.urldate "" output.after
+format.url output
+format.doi output
+new.block
+format.note output
+fin.entry
 }
 
 FUNCTION {proceedings}
