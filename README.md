@@ -1,4 +1,4 @@
-# 江南大学博士、硕士学位（毕业）论文 LaTeX 模板
+# 江南大学博士、硕士学位（毕业）论文 Overleaf Latex 模板
 
 > 感谢Bo Zhuang提供的原版项目：https://gitee.com/zhuangbo/jnthesis
 > 
